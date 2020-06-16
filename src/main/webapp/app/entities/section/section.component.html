@@ -32,7 +32,7 @@
                 <tr *ngFor="let section of sections ;trackBy: trackId">
                     <td><a [routerLink]="['/section', section.id, 'view']">{{ section.id }}</a></td>
                     <td>{{ section.name }}</td>
-                    <td>{{ section.status.name }}</td>
+                    <td>{{ section.status?.name }}</td>
                     <td>
                         <div *ngIf="section.status">
                             <a [routerLink]="['/section-status', section.status?.id, 'view']" >{{ section.status?.id }}</a>
