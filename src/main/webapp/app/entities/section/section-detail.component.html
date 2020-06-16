@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="section">
+            <h2><span jhiTranslate="votacioApp.section.detail.title">Section</span> {{ section.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="votacioApp.section.name">Name</span></dt>
+                <dd>
+                    <span>{{ section.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="votacioApp.section.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="section.status">
+                        <a [routerLink]="['/section-status', section.status?.id, 'view']">{{ section.status?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/section', section.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

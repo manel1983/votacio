@@ -1,0 +1,24 @@
+{
+  "votacioApp": {
+    "question": {
+      "home": {
+        "title": "Preguntes",
+        "createLabel": "Crear una nova Pregunta",
+        "createOrEditLabel": "Crear o modificar una Pregunta",
+        "notFound": "no s'han trobat Preguntes"
+      },
+      "created": "S'ha creat una nova Pregunta amb identificador {{ param }}",
+      "updated": "S'ha modificat una Pregunta amb identificador {{ param }}",
+      "deleted": "S'ha eliminat una Pregunta amb identificador {{ param }}",
+      "delete": {
+        "question": "Està segur que vol eliminar la Pregunta {{ id }}?"
+      },
+      "detail": {
+        "title": "Pregunta"
+      },
+      "text": "Text",
+      "sectionId": "Secció",
+      "status": "Estat"
+    }
+  }
+}

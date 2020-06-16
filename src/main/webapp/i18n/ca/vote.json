@@ -1,0 +1,25 @@
+{
+  "votacioApp": {
+    "vote": {
+      "home": {
+        "title": "Vots",
+        "createLabel": "Crear un nou Vot",
+        "createOrEditLabel": "Crear o modificar un Vot",
+        "notFound": "So s'han trobat Vots"
+      },
+      "created": "S?ha creat un nou Vot amb identificador {{ param }}",
+      "updated": "S'ha modificat un Vot amb identificador {{ param }}",
+      "deleted": "S'ha eliminat un Vot amb identificador {{ param }}",
+      "delete": {
+        "question": "Està segur que voil eliminar el Vot {{ id }}?"
+      },
+      "detail": {
+        "title": "Vot"
+      },
+      "userId": "Usuari",
+      "questionId": "Pregunta",
+      "answerId": "Resposta",
+      "status": "Estat"
+    }
+  }
+}

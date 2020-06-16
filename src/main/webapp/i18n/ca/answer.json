@@ -1,0 +1,24 @@
+{
+  "votacioApp": {
+    "answer": {
+      "home": {
+        "title": "Answers",
+        "createLabel": "Crear una nova Resposta",
+        "createOrEditLabel": "Crear o modificar una Resposta",
+        "notFound": "No s'han trobat Respostes"
+      },
+      "created": "S'ha creat una nova Resposta amb identificador {{ param }}",
+      "updated": "S'ha modificat una Resposta amb identificador {{ param }}",
+      "deleted": "S'ha eliminat una Resposta amb identificador {{ param }}",
+      "delete": {
+        "question": "Está segur que vol eliminar la Resposta {{ id }}?"
+      },
+      "detail": {
+        "title": "Resposta"
+      },
+      "text": "Text",
+      "questionId": "Pregunta",
+      "status": "Estat"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "votacioApp": {
+    "section": {
+      "home": {
+        "title": "Seccions",
+        "createLabel": "Crear una nova Secció",
+        "createOrEditLabel": "Crear o modificar una Seccio",
+        "notFound": "No s'han trobat Seccions"
+      },
+      "created": "S'ha creat una nova Seccio amb identificaor {{ param }}",
+      "updated": "S'ha modificar una Secció amb identificaor {{ param }}",
+      "deleted": "S'ha eliminat una Secció amb identificador {{ param }}",
+      "delete": {
+        "question": "Està segur que vol eliminar la Secció {{ id }}?"
+      },
+      "detail": {
+        "title": "Secció"
+      },
+      "name": "Nom",
+      "status": "Estat"
+    }
+  }
+}

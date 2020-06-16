@@ -1,0 +1,27 @@
+{
+  "votacioApp": {
+    "vote": {
+      "home": {
+        "title": "Votes",
+        "createLabel": "Crear nuevo Vote",
+        "createOrEditLabel": "Crear o editar Vote",
+        "notFound": "Ningún Votes encontrado"
+      },
+      "created": "Un nuevo Vote ha sido creado con el identificador {{ param }}",
+      "updated": "Un Vote ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Vote ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Vote {{ id }}?"
+      },
+      "detail": {
+        "title": "Vote"
+      },
+      "userId": "User Id",
+      "questionId": "Question Id",
+      "answerId": "Answer Id",
+      "status": "Status",
+      "questionId": "Question Id",
+      "answerId": "Answer Id"
+    }
+  }
+}

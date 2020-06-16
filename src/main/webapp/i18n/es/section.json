@@ -1,0 +1,24 @@
+{
+  "votacioApp": {
+    "section": {
+      "home": {
+        "title": "Sections",
+        "createLabel": "Crear nuevo Section",
+        "createOrEditLabel": "Crear o editar Section",
+        "notFound": "Ningún Sections encontrado"
+      },
+      "created": "Un nuevo Section ha sido creado con el identificador {{ param }}",
+      "updated": "Un Section ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Section ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Section {{ id }}?"
+      },
+      "detail": {
+        "title": "Section"
+      },
+      "name": "Name",
+      "status": "Status",
+      "status": "Status"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "votacioApp": {
+    "answerStatus": {
+      "home": {
+        "title": "Estats Respostes",
+        "createLabel": "Crear un estat de Respostes",
+        "createOrEditLabel": "Crear o modificar un Estat de Resposta",
+        "notFound": "No s'han trobat Estats de Resposta"
+      },
+      "created": "S'ha creat un Estat de Resposta amb identificador {{ param }}",
+      "updated": "S'ha modificat un Estat de Resposta amb identificador {{ param }}",
+      "deleted": "S'ha eliminat un Estat de Resposta amb identificador {{ param }}",
+      "delete": {
+        "question": "Està segur que vl eliminar l'Estat de la Resposta {{ id }}?"
+      },
+      "detail": {
+        "title": "Estat Resposta"
+      },
+      "name": "Nom",
+      "description": "Descripció"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "votacioApp": {
+    "sectionStatus": {
+      "home": {
+        "title": "Estats Secció",
+        "createLabel": "Crear un nou Estat Secció",
+        "createOrEditLabel": "Crear o modificar un Estat Secció",
+        "notFound": "No s'han trrobat Estats Secció"
+      },
+      "created": "S'ha creat un nou Estat Secció amb identificador {{ param }}",
+      "updated": "S'ha modificat un Estat Secció amb identificador {{ param }}",
+      "deleted": "S'ha eliminat un Estat Secciño amb identificador {{ param }}",
+      "delete": {
+        "question": "Està segur que vol eliminar l'Estat Secció {{ id }}?"
+      },
+      "detail": {
+        "title": "Estat Secció"
+      },
+      "name": "Nom",
+      "description": "Descripció"
+    }
+  }
+}

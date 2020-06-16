@@ -1,0 +1,23 @@
+{
+  "votacioApp": {
+    "questionStatus": {
+      "home": {
+        "title": "Estats Pregunta",
+        "createLabel": "Crear un nou Estat Pregunta",
+        "createOrEditLabel": "Crear o modificar un Estat Pregunta",
+        "notFound": "No s'han trobat Estats Pregunta"
+      },
+      "created": "S'ha creat un nou Estat Pregunta amb identificador {{ param }}",
+      "updated": "S'ha modificar un Estat Pregunta amb identificador {{ param }}",
+      "deleted": "S'ha eliminat un Estat Pregunta amb identificador {{ param }}",
+      "delete": {
+        "question": "Està segur que vol eliminar l'Estat Pregunta {{ id }}?"
+      },
+      "detail": {
+        "title": "Estat Pregunta"
+      },
+      "name": "Nom",
+      "description": "Descripció"
+    }
+  }
+}

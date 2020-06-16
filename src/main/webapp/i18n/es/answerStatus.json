@@ -1,0 +1,23 @@
+{
+  "votacioApp": {
+    "answerStatus": {
+      "home": {
+        "title": "Answer Statuses",
+        "createLabel": "Crear nuevo Answer Status",
+        "createOrEditLabel": "Crear o editar Answer Status",
+        "notFound": "Ningún Answer Statuses encontrado"
+      },
+      "created": "Un nuevo Answer Status ha sido creado con el identificador {{ param }}",
+      "updated": "Un Answer Status ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Answer Status ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Answer Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Answer Status"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

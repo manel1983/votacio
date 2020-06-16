@@ -1,0 +1,23 @@
+{
+  "votacioApp": {
+    "questionStatus": {
+      "home": {
+        "title": "Question Statuses",
+        "createLabel": "Crear nuevo Question Status",
+        "createOrEditLabel": "Crear o editar Question Status",
+        "notFound": "Ningún Question Statuses encontrado"
+      },
+      "created": "Un nuevo Question Status ha sido creado con el identificador {{ param }}",
+      "updated": "Un Question Status ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Question Status ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Question Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Question Status"
+      },
+      "name": "Name",
+      "description": "Description"
+    }
+  }
+}

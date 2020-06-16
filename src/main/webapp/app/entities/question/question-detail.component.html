@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="question">
+            <h2><span jhiTranslate="votacioApp.question.detail.title">Question</span> {{ question.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="votacioApp.question.text">Text</span></dt>
+                <dd>
+                    <span>{{ question.text }}</span>
+                </dd>
+                <dt><span jhiTranslate="votacioApp.question.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="question.status">
+                        <a [routerLink]="['/question-status', question.status?.id, 'view']">{{ question.status?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="votacioApp.question.section">Section</span></dt>
+                <dd>
+                    <div *ngIf="question.section">
+                        <a [routerLink]="['/section', question.section?.id, 'view']">{{ question.section?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/question', question.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
