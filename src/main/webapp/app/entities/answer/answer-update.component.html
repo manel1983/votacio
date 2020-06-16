@@ -27,7 +27,7 @@
                     <label class="form-control-label" jhiTranslate="votacioApp.answer.status" for="field_status">Status</label>
                     <select class="form-control" id="field_status" name="status" formControlName="status">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="answerStatusOption.id === editForm.get('status')!.value?.id ? editForm.get('status')!.value : answerStatusOption" *ngFor="let answerStatusOption of answerstatuses; trackBy: trackById">{{ answerStatusOption.id }}</option>
+                        <option [ngValue]="answerStatusOption.id === editForm.get('status')!.value?.id ? editForm.get('status')!.value : answerStatusOption" *ngFor="let answerStatusOption of answerstatuses; trackBy: trackById">{{ answerStatusOption.name }}</option>
                     </select>
                 </div>
 
@@ -35,7 +35,7 @@
                     <label class="form-control-label" jhiTranslate="votacioApp.answer.question" for="field_question">Question</label>
                     <select class="form-control" id="field_question" name="question" formControlName="question">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="questionOption.id === editForm.get('question')!.value?.id ? editForm.get('question')!.value : questionOption" *ngFor="let questionOption of questions; trackBy: trackById">{{ questionOption.id }}</option>
+                        <option [ngValue]="questionOption.id === editForm.get('question')!.value?.id ? editForm.get('question')!.value : questionOption" *ngFor="let questionOption of questions; trackBy: trackById">{{ questionOption.text }}</option>
                     </select>
                 </div>
             </div>

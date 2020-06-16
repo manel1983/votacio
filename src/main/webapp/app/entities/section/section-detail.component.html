@@ -15,7 +15,7 @@
                 <dt><span jhiTranslate="votacioApp.section.status">Status</span></dt>
                 <dd>
                     <div *ngIf="section.status">
-                        <a [routerLink]="['/section-status', section.status?.id, 'view']">{{ section.status?.id }}</a>
+                        <a [routerLink]="['/section-status', section.status?.name, 'view']">{{ section.status?.name }}</a>
                     </div>
                 </dd>
             </dl>
