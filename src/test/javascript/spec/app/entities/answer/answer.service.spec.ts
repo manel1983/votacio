@@ -2,6 +2,8 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { AnswerService } from 'app/entities/answer/answer.service';
 import { IAnswer, Answer } from 'app/shared/model/answer.model';
+import { IAnswerStatus } from 'app/shared/model/answer-status.model';
+import { IQuestion } from 'app/shared/model/question.model';
 
 describe('Service Tests', () => {
   describe('Answer Service', () => {
@@ -10,6 +12,8 @@ describe('Service Tests', () => {
     let httpMock: HttpTestingController;
     let elemDefault: IAnswer;
     let expectedResult: IAnswer | IAnswer[] | boolean | null;
+    const status: IAnswerStatus = { };
+    const question: IQuestion = { };
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -20,7 +24,8 @@ describe('Service Tests', () => {
       service = injector.get(AnswerService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Answer(0, 'AAAAAAA', 0, 0);
+      status.id = 0;
+      elemDefault = new Answer(0, 'AAAAAAA', status, question);
     });
 
     describe('Service methods', () => {

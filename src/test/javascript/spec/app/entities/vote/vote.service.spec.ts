@@ -2,6 +2,8 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { VoteService } from 'app/entities/vote/vote.service';
 import { IVote, Vote } from 'app/shared/model/vote.model';
+import { IAnswer } from 'app/shared/model/answer.model';
+import { IQuestion } from 'app/shared/model/question.model';
 
 describe('Service Tests', () => {
   describe('Vote Service', () => {
@@ -10,6 +12,8 @@ describe('Service Tests', () => {
     let httpMock: HttpTestingController;
     let elemDefault: IVote;
     let expectedResult: IVote | IVote[] | boolean | null;
+    const question: IQuestion = { };
+    const answer: IAnswer = { };
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -20,7 +24,9 @@ describe('Service Tests', () => {
       service = injector.get(VoteService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Vote(0, 0, 0, 0, 0);
+      question.id = 0;
+      answer.id = 0;
+      elemDefault = new Vote(0, 0, 0, question, answer);
     });
 
     describe('Service methods', () => {

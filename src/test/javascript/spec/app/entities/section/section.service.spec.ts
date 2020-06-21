@@ -2,6 +2,7 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { SectionService } from 'app/entities/section/section.service';
 import { ISection, Section } from 'app/shared/model/section.model';
+import { ISectionStatus } from 'app/shared/model/section-status.model';
 
 describe('Service Tests', () => {
   describe('Section Service', () => {
@@ -10,6 +11,7 @@ describe('Service Tests', () => {
     let httpMock: HttpTestingController;
     let elemDefault: ISection;
     let expectedResult: ISection | ISection[] | boolean | null;
+    const section: ISectionStatus = { };
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -20,7 +22,8 @@ describe('Service Tests', () => {
       service = injector.get(SectionService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Section(0, 'AAAAAAA', 0);
+      section.id = 0;
+      elemDefault = new Section(0, 'AAAAAAA', section);
     });
 
     describe('Service methods', () => {
