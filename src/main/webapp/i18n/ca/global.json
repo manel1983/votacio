@@ -57,7 +57,7 @@
         "authenticated": {
           "prefix": "Si vol ",
           "link": "autenticar-se",
-          "suffix": ", pot usar els comptes per defect:<br/>- Administrador (nom d'usuari=\"admin\" i contrasenya=\"admin\") <br/>- Usuari (nom d'usuari=\"user\" i contrasenya=\"user\")."
+          "suffix": ", pot usar els comptes per defecte:<br/>- Administrador (nom d'usuari=\"admin\" i contrasenya=\"admin\") <br/>- Usuari (nom d'usuari=\"user\" i contrasenya=\"user\")."
         },
         "register": {
           "noaccount": "No disposa d'un compte encara?",
