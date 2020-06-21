@@ -1,23 +1,35 @@
 package cat.manel.votacio.domain;
 
-import cat.manel.votacio.config.Constants;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.apache.commons.lang3.StringUtils;
-import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.apache.commons.lang3.StringUtils;
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import cat.manel.votacio.config.Constants;
 
 /**
  * A user.
@@ -50,8 +62,16 @@ public class User extends AbstractAuditingEntity implements Serializable {
 	private String firstName;
 
 	@Size(max = 50)
-	@Column(name = "last_name", length = 50)
-	private String lastName;
+	@Column(name = "surname1", length = 50)
+	private String surname1;
+
+	@Size(max = 50)
+	@Column(name = "surname2", length = 50)
+	private String surname2;
+
+	@Size(max = 15)
+	@Column(name = "nifnie", length = 15)
+	private String nifnie;
 
 	@Email
 	@Size(min = 5, max = 254)
@@ -61,6 +81,10 @@ public class User extends AbstractAuditingEntity implements Serializable {
 	@NotNull
 	@Column(nullable = false)
 	private boolean activated = false;
+
+	@NotNull
+	@Column(nullable = false)
+	private boolean validated = false;
 
 	@Size(min = 2, max = 10)
 	@Column(name = "lang_key", length = 10)
@@ -130,12 +154,36 @@ public class User extends AbstractAuditingEntity implements Serializable {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getSurname1() {
+		return surname1;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setSurname1(String surname1) {
+		this.surname1 = surname1;
+	}
+
+	public String getSurname2() {
+		return surname2;
+	}
+
+	public void setSurname2(String surname2) {
+		this.surname2 = surname2;
+	}
+
+	public boolean isValidated() {
+		return validated;
+	}
+
+	public void setValidated(boolean validated) {
+		this.validated = validated;
+	}
+
+	public String getNifnie() {
+		return nifnie;
+	}
+
+	public void setNifnie(String nifnie) {
+		this.nifnie = nifnie;
 	}
 
 	public String getEmail() {
@@ -229,7 +277,8 @@ public class User extends AbstractAuditingEntity implements Serializable {
 	// prettier-ignore
 	@Override
 	public String toString() {
-		return "User{" + "login='" + login + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName
+		return "User{" + "login='" + login + '\'' + ", surname1='" + surname1 + '\'' + ", surname2='" + surname2
+				+ ", validated='" + validated + ", nifnie='" + nifnie
 				+ '\'' + ", email='" + email + '\'' + ", imageUrl='" + imageUrl + '\'' + ", activated='" + activated
 				+ '\'' + ", langKey='" + langKey + '\'' + ", activationKey='" + activationKey + '\'' + "}";
 	}

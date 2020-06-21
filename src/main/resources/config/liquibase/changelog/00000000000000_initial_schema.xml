@@ -22,12 +22,17 @@
             </column>
             <column name="password_hash" type="varchar(60)"/>
             <column name="first_name" type="varchar(50)"/>
-            <column name="last_name" type="varchar(50)"/>
+            <column name="surname1" type="varchar(50)"/>
+            <column name="surname2" type="varchar(50)"/>
+            <column name="nifnie" type="varchar(15)"/>
             <column name="email" type="varchar(191)">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_user_email"/>
             </column>
             <column name="image_url" type="varchar(256)"/>
             <column name="activated" type="boolean" valueBoolean="false">
+                <constraints nullable="false" />
+            </column>
+            <column name="validated" type="boolean" valueBoolean="false">
                 <constraints nullable="false" />
             </column>
             <column name="lang_key" type="varchar(10)"/>
@@ -100,6 +105,7 @@
                   separator=";"
                   tableName="jhi_user">
             <column name="activated" type="boolean"/>
+            <column name="validated" type="boolean"/>
             <column name="created_date" type="timestamp"/>
         </loadData>
         <dropDefaultValue tableName="jhi_user" columnName="created_date" columnDataType="datetime"/>

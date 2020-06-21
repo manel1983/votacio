@@ -34,7 +34,7 @@ public class UserMapperTest {
         user.setActivated(true);
         user.setEmail("johndoe@localhost");
         user.setFirstName("john");
-        user.setLastName("doe");
+        user.setSurname1("doe");
         user.setImageUrl("image_url");
         user.setLangKey("en");
 

@@ -44,10 +44,13 @@ public class UserMapper {
             user.setId(userDTO.getId());
             user.setLogin(userDTO.getLogin());
             user.setFirstName(userDTO.getFirstName());
-            user.setLastName(userDTO.getLastName());
+            user.setSurname1(userDTO.getSurname1());
+            user.setSurname2(userDTO.getSurname2());
+            user.setNifnie(userDTO.getNifnie());
             user.setEmail(userDTO.getEmail());
             user.setImageUrl(userDTO.getImageUrl());
             user.setActivated(userDTO.isActivated());
+            user.setValidated(userDTO.isValidated());
             user.setLangKey(userDTO.getLangKey());
             Set<Authority> authorities = this.authoritiesFromStrings(userDTO.getAuthorities());
             user.setAuthorities(authorities);

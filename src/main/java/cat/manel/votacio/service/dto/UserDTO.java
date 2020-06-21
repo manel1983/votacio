@@ -1,197 +1,225 @@
 package cat.manel.votacio.service.dto;
 
-import cat.manel.votacio.config.Constants;
-
-import cat.manel.votacio.domain.Authority;
-import cat.manel.votacio.domain.User;
-
-import javax.validation.constraints.*;
 import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import cat.manel.votacio.config.Constants;
+import cat.manel.votacio.domain.Authority;
+import cat.manel.votacio.domain.User;
 
 /**
  * A DTO representing a user, with his authorities.
  */
 public class UserDTO {
 
-    private Long id;
+	private Long id;
 
-    @NotBlank
-    @Pattern(regexp = Constants.LOGIN_REGEX)
-    @Size(min = 1, max = 50)
-    private String login;
+	@NotBlank
+	@Pattern(regexp = Constants.LOGIN_REGEX)
+	@Size(min = 1, max = 50)
+	private String login;
 
-    @Size(max = 50)
-    private String firstName;
+	@Size(max = 50)
+	private String firstName;
 
-    @Size(max = 50)
-    private String lastName;
+	@Size(max = 50)
+	private String surname1;
 
-    @Email
-    @Size(min = 5, max = 254)
-    private String email;
+	@Size(max = 50)
+	private String surname2;
 
-    @Size(max = 256)
-    private String imageUrl;
+	@Size(max = 15)
+	private String nifnie;
 
-    private boolean activated = false;
+	@Email
+	@Size(min = 5, max = 254)
+	private String email;
 
-    @Size(min = 2, max = 10)
-    private String langKey;
+	@Size(max = 256)
+	private String imageUrl;
 
-    private String createdBy;
+	private boolean activated = false;
 
-    private Instant createdDate;
+	private boolean validated = false;
 
-    private String lastModifiedBy;
+	@Size(min = 2, max = 10)
+	private String langKey;
 
-    private Instant lastModifiedDate;
+	private String createdBy;
 
-    private Set<String> authorities;
+	private Instant createdDate;
 
-    public UserDTO() {
-        // Empty constructor needed for Jackson.
-    }
+	private String lastModifiedBy;
 
-    public UserDTO(User user) {
-        this.id = user.getId();
-        this.login = user.getLogin();
-        this.firstName = user.getFirstName();
-        this.lastName = user.getLastName();
-        this.email = user.getEmail();
-        this.activated = user.getActivated();
-        this.imageUrl = user.getImageUrl();
-        this.langKey = user.getLangKey();
-        this.createdBy = user.getCreatedBy();
-        this.createdDate = user.getCreatedDate();
-        this.lastModifiedBy = user.getLastModifiedBy();
-        this.lastModifiedDate = user.getLastModifiedDate();
-        this.authorities = user.getAuthorities().stream()
-            .map(Authority::getName)
-            .collect(Collectors.toSet());
-    }
+	private Instant lastModifiedDate;
 
-    public Long getId() {
-        return id;
-    }
+	private Set<String> authorities;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public UserDTO() {
+		// Empty constructor needed for Jackson.
+	}
 
-    public String getLogin() {
-        return login;
-    }
+	public UserDTO(User user) {
+		this.id = user.getId();
+		this.login = user.getLogin();
+		this.firstName = user.getFirstName();
+		this.surname1 = user.getSurname1();
+		this.surname2 = user.getSurname2();
+		this.nifnie = user.getNifnie();
+		this.email = user.getEmail();
+		this.activated = user.getActivated();
+		this.validated = user.isValidated();
+		this.imageUrl = user.getImageUrl();
+		this.langKey = user.getLangKey();
+		this.createdBy = user.getCreatedBy();
+		this.createdDate = user.getCreatedDate();
+		this.lastModifiedBy = user.getLastModifiedBy();
+		this.lastModifiedDate = user.getLastModifiedDate();
+		this.authorities = user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet());
+	}
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public String getLogin() {
+		return login;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getSurname1() {
+		return surname1;
+	}
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
+	public void setSurname1(String surname1) {
+		this.surname1 = surname1;
+	}
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+	public String getNifnie() {
+		return nifnie;
+	}
 
-    public boolean isActivated() {
-        return activated;
-    }
+	public void setNifnie(String nifnie) {
+		this.nifnie = nifnie;
+	}
 
-    public void setActivated(boolean activated) {
-        this.activated = activated;
-    }
+	public String getSurname2() {
+		return surname2;
+	}
 
-    public String getLangKey() {
-        return langKey;
-    }
+	public void setSurname2(String surname2) {
+		this.surname2 = surname2;
+	}
 
-    public void setLangKey(String langKey) {
-        this.langKey = langKey;
-    }
+	public boolean isValidated() {
+		return validated;
+	}
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
+	public void setValidated(boolean validated) {
+		this.validated = validated;
+	}
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public Instant getCreatedDate() {
-        return createdDate;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setCreatedDate(Instant createdDate) {
-        this.createdDate = createdDate;
-    }
+	public String getImageUrl() {
+		return imageUrl;
+	}
 
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
+	public boolean isActivated() {
+		return activated;
+	}
 
-    public Instant getLastModifiedDate() {
-        return lastModifiedDate;
-    }
+	public void setActivated(boolean activated) {
+		this.activated = activated;
+	}
 
-    public void setLastModifiedDate(Instant lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
+	public String getLangKey() {
+		return langKey;
+	}
 
-    public Set<String> getAuthorities() {
-        return authorities;
-    }
+	public void setLangKey(String langKey) {
+		this.langKey = langKey;
+	}
 
-    public void setAuthorities(Set<String> authorities) {
-        this.authorities = authorities;
-    }
+	public String getCreatedBy() {
+		return createdBy;
+	}
 
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "UserDTO{" +
-            "login='" + login + '\'' +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", email='" + email + '\'' +
-            ", imageUrl='" + imageUrl + '\'' +
-            ", activated=" + activated +
-            ", langKey='" + langKey + '\'' +
-            ", createdBy=" + createdBy +
-            ", createdDate=" + createdDate +
-            ", lastModifiedBy='" + lastModifiedBy + '\'' +
-            ", lastModifiedDate=" + lastModifiedDate +
-            ", authorities=" + authorities +
-            "}";
-    }
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Instant getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Instant createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getLastModifiedBy() {
+		return lastModifiedBy;
+	}
+
+	public void setLastModifiedBy(String lastModifiedBy) {
+		this.lastModifiedBy = lastModifiedBy;
+	}
+
+	public Instant getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+
+	public void setLastModifiedDate(Instant lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
+	}
+
+	public Set<String> getAuthorities() {
+		return authorities;
+	}
+
+	public void setAuthorities(Set<String> authorities) {
+		this.authorities = authorities;
+	}
+
+	// prettier-ignore
+	@Override
+	public String toString() {
+		return "UserDTO{" + "login='" + login + '\'' + ", firstName='" + firstName + '\'' + ", surname1='" + surname1
+				+ ", surname2='" + surname2 + ", nifnie='" + nifnie + ", validated='" + validated
+				+ '\'' + ", email='" + email + '\'' + ", imageUrl='" + imageUrl + '\'' + ", activated=" + activated
+				+ ", langKey='" + langKey + '\'' + ", createdBy=" + createdBy + ", createdDate=" + createdDate
+				+ ", lastModifiedBy='" + lastModifiedBy + '\'' + ", lastModifiedDate=" + lastModifiedDate
+				+ ", authorities=" + authorities + "}";
+	}
 }

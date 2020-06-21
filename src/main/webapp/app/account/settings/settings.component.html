@@ -37,27 +37,59 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" for="lastName" jhiTranslate="settings.form.lastname">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{ 'settings.form.lastname.placeholder' | translate }}"
-                           formControlName="lastName">
+                    <label class="form-control-label" for="surname1" jhiTranslate="settings.form.surname1">Surname1</label>
+                    <input type="text" class="form-control" id="surname1" name="surname1" placeholder="{{ 'settings.form.surname1.placeholder' | translate }}"
+                           formControlName="surname1">
 
-                    <div *ngIf="settingsForm.get('lastName')!.invalid && (settingsForm.get('lastName')!.dirty || settingsForm.get('lastName')!.touched)">
+                    <div *ngIf="settingsForm.get('surname1')!.invalid && (settingsForm.get('surname1')!.dirty || settingsForm.get('surname1')!.touched)">
                         <small class="form-text text-danger"
-                               *ngIf="settingsForm.get('lastName')?.errors?.required"
-                               jhiTranslate="settings.messages.validate.lastname.required">
+                               *ngIf="settingsForm.get('surname1')?.errors?.required"
+                               jhiTranslate="settings.messages.validate.surname1.required">
                             Your last name is required.
                         </small>
 
                         <small class="form-text text-danger"
-                               *ngIf="settingsForm.get('lastName')?.errors?.minlength"
-                               jhiTranslate="settings.messages.validate.lastname.minlength">
+                               *ngIf="settingsForm.get('surname1')?.errors?.minlength"
+                               jhiTranslate="settings.messages.validate.surname1.minlength">
                             Your last name is required to be at least 1 character.
                         </small>
 
                         <small class="form-text text-danger"
-                               *ngIf="settingsForm.get('lastName')?.errors?.maxlength"
-                               jhiTranslate="settings.messages.validate.lastname.maxlength">
+                               *ngIf="settingsForm.get('surname1')?.errors?.maxlength"
+                               jhiTranslate="settings.messages.validate.surname1.maxlength">
                             Your last name cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="surname2" jhiTranslate="settings.form.surname2">Surname2</label>
+                    <input type="text" class="form-control" id="surname2" name="surname2" placeholder="{{ 'settings.form.surname2.placeholder' | translate }}"
+                           formControlName="surname2">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="nifnie" jhiTranslate="settings.form.nifnie">NIF/NIE</label>
+                    <input type="text" class="form-control" id="nifnie" name="nifnie" placeholder="{{ 'settings.form.nifnie.placeholder' | translate }}"
+                           formControlName="nifnie">
+
+                    <div *ngIf="settingsForm.get('nifnie')!.invalid && (settingsForm.get('nifnie')!.dirty || settingsForm.get('nifnie')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('nifnie')?.errors?.required"
+                               jhiTranslate="settings.messages.validate.nifnie.required">
+                            Your ID is required.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('nifnie')?.errors?.minlength"
+                               jhiTranslate="settings.messages.validate.nifnie.minlength">
+                            Your ID is required to be at least 1 character.
+                        </small>
+
+                        <small class="form-text text-danger"
+                               *ngIf="settingsForm.get('nifnie')?.errors?.maxlength"
+                               jhiTranslate="settings.messages.validate.nifnie.maxlength">
+                            Your ID cannot be longer than 50 characters.
                         </small>
                     </div>
                 </div>
