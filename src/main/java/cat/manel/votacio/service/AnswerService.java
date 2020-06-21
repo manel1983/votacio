@@ -1,11 +1,12 @@
 package cat.manel.votacio.service;
 
-import cat.manel.votacio.domain.Answer;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.Optional;
+import cat.manel.votacio.domain.Answer;
 
 /**
  * Service Interface for managing {@link Answer}.
@@ -28,6 +29,7 @@ public interface AnswerService {
      */
     Page<Answer> findAll(Pageable pageable);
 
+    List<Answer> findByQuestion(Long questionId);
 
     /**
      * Get the "id" answer.

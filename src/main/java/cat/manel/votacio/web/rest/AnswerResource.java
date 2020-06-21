@@ -105,6 +105,13 @@ public class AnswerResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
+    @GetMapping("/answers_question/{questionId}")
+    public ResponseEntity<List<Answer>> getByQuestion(@PathVariable(name = "questionId") Long questionId) {
+        log.debug("REST request to get the question Answers");
+        List<Answer> result = answerService.findByQuestion(questionId);
+        return ResponseEntity.ok().body(result);
+    }
+
     /**
      * {@code GET  /answers/:id} : get the "id" answer.
      *

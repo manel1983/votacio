@@ -1,0 +1,12 @@
+{
+  "votacioApp": {
+    "quiz": {
+      "home": {
+        "title": "Enquesta",
+        "notFound": "So s'ha trobat cap Enquesta"
+      },
+      "id": "Id",
+      "sections": "Seccions"
+    }
+  }
+}

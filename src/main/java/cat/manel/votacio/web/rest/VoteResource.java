@@ -110,6 +110,17 @@ public class VoteResource {
         return ResponseUtil.wrapOrNotFound(vote);
     }
 
+    @GetMapping(value = "/user_vote", params = { "questionId", "userId" } )
+    public ResponseEntity<Vote> getVote(@RequestParam(name = "questionId") Long questionId, @RequestParam("userId") Long userId) {
+        log.debug("REST request to get a Vote: question {}, user {}", questionId, userId);
+        Optional<Vote> vote = voteService.findUserVote(questionId, userId);
+        if (vote.isEmpty()) {
+        	return ResponseEntity.ok().build();
+        } else {
+        	return ResponseEntity.of(vote).ok().build();
+        }
+    }
+
     /**
      * {@code DELETE  /votes/:id} : delete the "id" vote.
      *

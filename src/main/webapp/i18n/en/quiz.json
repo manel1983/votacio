@@ -1,0 +1,12 @@
+{
+  "votacioApp": {
+    "quiz": {
+      "home": {
+        "title": "Quiz",
+        "notFound": "No Quiz found"
+      },
+      "id": "Id",
+      "sections": "Sections"
+    }
+  }
+}

@@ -1,17 +1,18 @@
 package cat.manel.votacio.service.impl;
 
-import cat.manel.votacio.service.AnswerService;
-import cat.manel.votacio.domain.Answer;
-import cat.manel.votacio.repository.AnswerRepository;
+import java.util.List;
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import cat.manel.votacio.domain.Answer;
+import cat.manel.votacio.repository.AnswerRepository;
+import cat.manel.votacio.service.AnswerService;
 
 /**
  * Service Implementation for managing {@link Answer}.
@@ -53,7 +54,13 @@ public class AnswerServiceImpl implements AnswerService {
         return answerRepository.findAll(pageable);
     }
 
-
+    @Override
+    @Transactional(readOnly = true)
+    public List<Answer> findByQuestion(Long questionId) {
+    	log.debug("Request to get the question Answers");
+        return answerRepository.findByQuestion(questionId);
+    }
+    
     /**
      * Get one answer by id.
      *

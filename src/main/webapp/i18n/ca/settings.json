@@ -4,8 +4,12 @@
     "form": {
       "firstname": "Nom",
       "firstname.placeholder": "El seu nom",
-      "lastname": "Cognoms",
-      "lastname.placeholder": "Els seus cognoms",
+      "surname1": "Cognom 1",
+      "surname1.placeholder": "Els seu primer cognom",
+      "surname2": "Cognom 2",
+      "surname2.placeholder": "Els seu segon cognom",
+      "nifnie": "NIF/NIE",
+      "nifnie.placeholder": "El seu NIF/NIE",
       "language": "Idioma",
       "button": "Guardar"
     },
@@ -21,10 +25,15 @@
           "minlength": "El seu nom ha de tenir més d'un caràcter",
           "maxlength": "El seu nom no pot tenir més de 50 caràcters"
         },
-        "lastname": {
+        "surname1": {
           "required": "Els seus cognoms són obligatoris.",
           "minlength": "El seus cognoms han de tenir més d'un caràcter",
           "maxlength": "El seus cognoms no poden tenir més de 50 caràcters"
+        },
+        "nifnie": {
+          "required": "El seu NIF/NIE és obligatori.",
+          "minlength": "El seu NIF/NIE ha de tenir més d'un caràcter",
+          "maxlength": "El seu NIF/NIE no pot tenir més de 50 caràcters"
         }
       }
     }

@@ -4,8 +4,12 @@
     "form": {
       "firstname": "First Name",
       "firstname.placeholder": "Your first name",
-      "lastname": "Last Name",
-      "lastname.placeholder": "Your last name",
+      "surname1": "Surname",
+      "surname1.placeholder": "Your first surname",
+      "surname2": "Surname 2",
+      "surname2.placeholder": "Your second surname",
+      "nifnie": "ID",
+      "nifnie.placeholder": "Ypur ID",
       "language": "Language",
       "button": "Save"
     },
@@ -21,10 +25,15 @@
           "minlength": "Your first name is required to be at least 1 character",
           "maxlength": "Your first name cannot be longer than 50 characters"
         },
-        "lastname": {
+        "surname1": {
           "required": "Your last name is required.",
           "minlength": "Your last name is required to be at least 1 character",
           "maxlength": "Your last name cannot be longer than 50 characters"
+        },
+        "nifnie": {
+          "required": "Your ID is required.",
+          "minlength": "Your ID is required to be at least 1 character",
+          "maxlength": "Your ID cannot be longer than 15 characters"
         }
       }
     }

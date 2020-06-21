@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { SERVER_API_URL } from 'app/app.constants';
@@ -30,6 +30,11 @@ export class QuestionService {
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
     return this.http.get<IQuestion[]>(this.resourceUrl, { params: options, observe: 'response' });
+  }
+
+  querySection(sectionId: number): Observable<EntityArrayResponseType> {
+    const options: HttpParams = new HttpParams();
+    return this.http.get<IQuestion[]>(this.resourceUrl + '_section/' + sectionId, { params: options, observe: 'response' });
   }
 
   delete(id: number): Observable<HttpResponse<{}>> {

@@ -1,0 +1,33 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="votacioApp.quiz.home.title">Votes</span>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="row" *ngIf="quiz && quiz?.sections">
+        <div class="col-sm-2">
+            <div *ngFor="let section of quiz?.sections; let i = index;" (click)="setSection(i)" [ngClass]="{'highlight': selectedSection === i}">
+                {{section.name}}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div *ngFor="let question of questions; let i = index;" (click)="setQuestion(i)" [ngClass]="{'highlight': selectedQuestion === i}">
+                {{question.text}}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div *ngFor="let answer of answers; let i = index;">
+                <div class="col-sm-1">
+                    <input type="checkbox" [value]="answer.id" (change)="setAnswer($event)" />
+                </div>
+                <div class="col-sm-3">
+                    {{answer.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

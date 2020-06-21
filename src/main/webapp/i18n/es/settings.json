@@ -4,8 +4,12 @@
     "form": {
       "firstname": "Nombre",
       "firstname.placeholder": "Su nombre",
-      "lastname": "Apellidos",
-      "lastname.placeholder": "Sus apellidos",
+      "surname1": "Apellido 1",
+      "surname1.placeholder": "Su primer apellido",
+      "surname2": "Apellido 2",
+      "surname2.placeholder": "Su segundo apellido",
+      "nifnie": "NIF/NIE",
+      "nifnie.placeholder": "Su NIF/NIE",
       "language": "Idioma",
       "button": "Guardar"
     },
@@ -21,10 +25,15 @@
           "minlength": "Se requiere que su nombre tenga por lo menos 1 caracter",
           "maxlength": "Su nombre no puede tener más de 50 caracteres"
         },
-        "lastname": {
+        "surname1": {
           "required": "Se requiere que ingrese sus apellidos.",
           "minlength": "Se requiere que sus apellidos tengan por lo menos 1 caracter",
           "maxlength": "Sus apellidos no pueden tener más de 50 caracteres"
+        },
+        "nifnie": {
+          "required": "Se rerquiere que ignrese su NIF/NIE.",
+          "minlength": "Se requiere que su NIF/NIE tenga al menos 1 caracter",
+          "maxlength": "Su NIF/NIE no puede tener más de 15 caracteres"
         }
       }
     }

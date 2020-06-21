@@ -35,7 +35,7 @@ public class Vote implements Serializable {
 	@Column(name = "user_id", nullable = false)
 	private Long userId;
 
-	@Column(name = "status_is", nullable = false)
+	@Column(name = "status_id", nullable = false)
 	private Long status;
 
 	@ManyToOne

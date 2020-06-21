@@ -56,13 +56,34 @@
                 </div>
 
                 <div class="form-group">
-                    <label jhiTranslate="userManagement.lastName">Last Name</label>
-                    <input type="text" class="form-control" name="lastName"
-                           formControlName="lastName">
+                    <label jhiTranslate="userManagement.surname1">Surname 1</label>
+                    <input type="text" class="form-control" name="surname1"
+                           formControlName="surname1">
 
-                    <div *ngIf="editForm.get('lastName')!.invalid && (editForm.get('lastName')!.dirty || editForm.get('lastName')!.touched)">
+                    <div *ngIf="editForm.get('surname1')!.invalid && (editForm.get('surname1')!.dirty || editForm.get('surname1')!.touched)">
                         <small class="form-text text-danger"
-                               *ngIf="editForm.get('lastName')?.errors?.maxlength"
+                               *ngIf="editForm.get('surname1')?.errors?.maxlength"
+                               jhiTranslate="entity.validation.maxlength"
+                               [translateValues]="{ max: 50 }">
+                            This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="userManagement.surname2">Surname 2</label>
+                    <input type="text" class="form-control" name="surname2"
+                           formControlName="surname2">
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="userManagement.nifnie">ID</label>
+                    <input type="text" class="form-control" name="nifnie"
+                           formControlName="nifnie">
+
+                    <div *ngIf="editForm.get('nifnie')!.invalid && (editForm.get('nifnie')!.dirty || editForm.get('nifnie')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nifnie')?.errors?.maxlength"
                                jhiTranslate="entity.validation.maxlength"
                                [translateValues]="{ max: 50 }">
                             This field cannot be longer than 50 characters.

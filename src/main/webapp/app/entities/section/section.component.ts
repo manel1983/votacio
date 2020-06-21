@@ -57,7 +57,7 @@ export class SectionComponent implements OnInit, OnDestroy {
     combineLatest(this.activatedRoute.data, this.activatedRoute.queryParamMap, (data: Data, params: ParamMap) => {
       const page = params.get('page');
       const pageNumber = page !== null ? +page : 1;
-      const sort = (params.get('sort') ?? data['defaultSort']).split(',');
+      const sort = (params.get('sort') ? (params.get('sort')) : data['defaultSort']).split(',');
       const predicate = sort[0];
       const ascending = sort[1] === 'asc';
       if (pageNumber !== this.page || predicate !== this.predicate || ascending !== this.ascending) {
@@ -113,6 +113,6 @@ export class SectionComponent implements OnInit, OnDestroy {
   }
 
   protected onError(): void {
-    this.ngbPaginationPage = this.page ?? 1;
+    this.ngbPaginationPage = this.page ? this.page: 1;
   }
 }

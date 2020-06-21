@@ -32,6 +32,10 @@ import { RouterModule } from '@angular/router';
         path: 'vote',
         loadChildren: () => import('./vote/vote.module').then(m => m.VotacioVoteModule),
       },
+      {
+        path: 'quiz',
+        loadChildren: () => import('./quiz/quiz.module').then(m => m.VotacioQuizModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

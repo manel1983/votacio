@@ -28,7 +28,9 @@ export class UserManagementUpdateComponent implements OnInit {
       ],
     ],
     firstName: ['', [Validators.maxLength(50)]],
-    lastName: ['', [Validators.maxLength(50)]],
+    surname1: ['', [Validators.maxLength(50)]],
+    surname2: ['', [Validators.maxLength(50)]],
+    nifnie: ['', [Validators.maxLength(15)]],
     email: ['', [Validators.minLength(5), Validators.maxLength(254), Validators.email]],
     activated: [],
     langKey: [],
@@ -77,9 +79,12 @@ export class UserManagementUpdateComponent implements OnInit {
       id: user.id,
       login: user.login,
       firstName: user.firstName,
-      lastName: user.lastName,
+      surname1: user.surname1,
+      surname2: user.surname2,
+      nifnie: user.nifnie,
       email: user.email,
       activated: user.activated,
+      validated: user.validated,
       langKey: user.langKey,
       authorities: user.authorities,
     });
@@ -88,9 +93,12 @@ export class UserManagementUpdateComponent implements OnInit {
   private updateUser(user: User): void {
     user.login = this.editForm.get(['login'])!.value;
     user.firstName = this.editForm.get(['firstName'])!.value;
-    user.lastName = this.editForm.get(['lastName'])!.value;
+    user.surname1 = this.editForm.get(['surname1'])!.value;
+    user.surname2 = this.editForm.get(['surname2'])!.value;
+    user.nifnie = this.editForm.get(['nifnie'])!.value;
     user.email = this.editForm.get(['email'])!.value;
     user.activated = this.editForm.get(['activated'])!.value;
+    user.validated = this.editForm.get(['validated'])!.value;
     user.langKey = this.editForm.get(['langKey'])!.value;
     user.authorities = this.editForm.get(['authorities'])!.value;
   }

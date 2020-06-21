@@ -37,6 +37,8 @@ public interface VoteService {
      */
     Optional<Vote> findOne(Long id);
 
+    Optional<Vote> findUserVote(Long questionId, Long userId);
+
     /**
      * Delete the "id" vote.
      *
