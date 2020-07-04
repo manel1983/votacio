@@ -6,7 +6,9 @@
         "notFound": "So s'ha trobat cap Enquesta"
       },
       "id": "Id",
-      "sections": "Seccions"
+      "sections": "Seccions",
+      "questions": "Preguntes",
+      "answers": "Respostes"
     }
   }
 }

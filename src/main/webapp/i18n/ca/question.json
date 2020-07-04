@@ -17,7 +17,7 @@
         "title": "Pregunta"
       },
       "text": "Text",
-      "sectionId": "Secció",
+      "section": "Secció",
       "status": "Estat"
     }
   }

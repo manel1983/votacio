@@ -8,13 +8,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
-        "sectionStatus": "Section Status",
-        "questionStatus": "Question Status",
-        "answerStatus": "Answer Status",
-        "section": "Section",
-        "question": "Question",
-        "answer": "Answer",
-        "vote": "Vote",
+        "sectionStatus": "Estados Seccion",
+        "questionStatus": "Estados Preguntas",
+        "answerStatus": "Estados Respuesta",
+        "section": "Secciones",
+        "question": "Preguntas",
+        "answer": "Respuestas",
+        "vote": "Votos",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -143,5 +143,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "Pie de página"
+  "footer": ""
 }

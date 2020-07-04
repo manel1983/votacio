@@ -17,10 +17,8 @@
         "title": "Question"
       },
       "text": "Text",
-      "sectionId": "Section Id",
-      "status": "Status",
-      "status": "Status",
-      "sectionId": "Section Id"
+      "section": "Section",
+      "status": "Status"
     }
   }
 }

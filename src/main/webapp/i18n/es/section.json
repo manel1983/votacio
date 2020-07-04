@@ -2,23 +2,22 @@
   "votacioApp": {
     "section": {
       "home": {
-        "title": "Sections",
-        "createLabel": "Crear nuevo Section",
-        "createOrEditLabel": "Crear o editar Section",
-        "notFound": "Ningún Sections encontrado"
+        "title": "Secciones",
+        "createLabel": "Crear nueva Seccion",
+        "createOrEditLabel": "Crear o editar una Seccion",
+        "notFound": "Ningúna Seccion encontrada"
       },
-      "created": "Un nuevo Section ha sido creado con el identificador {{ param }}",
-      "updated": "Un Section ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Section ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Seccion ha sido creada con el identificador {{ param }}",
+      "updated": "Una Seccion ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Seccion ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Section {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Seccion {{ id }}?"
       },
       "detail": {
-        "title": "Section"
+        "title": "Seccion"
       },
-      "name": "Name",
-      "status": "Status",
-      "status": "Status"
+      "name": "Nombre",
+      "status": "Estado"
     }
   }
 }

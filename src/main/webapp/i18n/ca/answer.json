@@ -2,7 +2,7 @@
   "votacioApp": {
     "answer": {
       "home": {
-        "title": "Answers",
+        "title": "Resposta",
         "createLabel": "Crear una nova Resposta",
         "createOrEditLabel": "Crear o modificar una Resposta",
         "notFound": "No s'han trobat Respostes"
@@ -17,7 +17,7 @@
         "title": "Resposta"
       },
       "text": "Text",
-      "questionId": "Pregunta",
+      "question": "Pregunta",
       "status": "Estat"
     }
   }

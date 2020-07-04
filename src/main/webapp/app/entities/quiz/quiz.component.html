@@ -7,21 +7,27 @@
 
     <jhi-alert></jhi-alert>
 
+    <div class="row">
+        <dt class="col-sm-2"><span jhiTranslate="votacioApp.quiz.sections">Sections</span></dt>
+        <dt class="col-sm-4"><span jhiTranslate="votacioApp.quiz.questions">Questions</span></dt>
+        <dt class="col-sm-4"><span jhiTranslate="votacioApp.quiz.answers">Answers</span></dt>
+    </div>
+
     <div class="row" *ngIf="quiz && quiz?.sections">
         <div class="col-sm-2">
-            <div *ngFor="let section of quiz?.sections; let i = index;" (click)="setSection(i)" [ngClass]="{'highlight': selectedSection === i}">
+            <div class="mt-4" *ngFor="let section of quiz?.sections; let i = index;" (click)="setSection(i)" [ngClass]="{'highlight': selectedSection === i}">
                 {{section.name}}
             </div>
         </div>
         <div class="col-sm-4">
-            <div *ngFor="let question of questions; let i = index;" (click)="setQuestion(i)" [ngClass]="{'highlight': selectedQuestion === i}">
+            <div class="mt-2" *ngFor="let question of questions; let i = index;" (click)="setQuestion(i)" [ngClass]="{'highlight': selectedQuestion === i}">
                 {{question.text}}
             </div>
         </div>
         <div class="col-sm-4">
-            <div *ngFor="let answer of answers; let i = index;">
+            <div class="mt-2" *ngFor="let answer of answers; let i = index;">
                 <label for="answer_{{answer.id}}">
-                    <input id="{{answer.id}}" [value]="answer.id" type="radio" name="options" (change)="setAnswer($event)" checked="selectedAnswer.id == answer.id && selectedAnswer">
+                    <input id="{{answer.id}}" [value]="answer.id" type="radio" name="options" (change)="setAnswer($event)" checked="selectedAnswer.id == answer.id && selectedAnswer != undefined">
                     {{answer.text}}
                 </label>
             </div>

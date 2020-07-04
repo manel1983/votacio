@@ -6,7 +6,9 @@
         "notFound": "No Quiz found"
       },
       "id": "Id",
-      "sections": "Sections"
+      "sections": "Sections",
+      "questions": "Questions",
+      "answers": "Answers"
     }
   }
 }

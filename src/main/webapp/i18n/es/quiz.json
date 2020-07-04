@@ -6,7 +6,9 @@
         "notFound": "Ninguna Enquesta encontrada"
       },
       "id": "Id",
-      "sections": "Secciones"
+      "sections": "Secciones",
+      "questions": "Preguntas",
+      "answers": "Respuestas"
     }
   }
 }

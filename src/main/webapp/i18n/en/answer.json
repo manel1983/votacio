@@ -17,10 +17,8 @@
         "title": "Answer"
       },
       "text": "Text",
-      "questionId": "Question Id",
-      "status": "Status",
-      "status": "Status",
-      "questionId": "Question Id"
+      "question": "Question",
+      "status": "Status"
     }
   }
 }

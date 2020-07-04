@@ -2,25 +2,23 @@
   "votacioApp": {
     "question": {
       "home": {
-        "title": "Questions",
-        "createLabel": "Crear nuevo Question",
-        "createOrEditLabel": "Crear o editar Question",
-        "notFound": "Ningún Questions encontrado"
+        "title": "Preguntas",
+        "createLabel": "Crear nueva Pregunta",
+        "createOrEditLabel": "Crear o editar una Pregunta",
+        "notFound": "Ningúna Pregunta encontrada"
       },
-      "created": "Un nuevo Question ha sido creado con el identificador {{ param }}",
-      "updated": "Un Question ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Question ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva Pregunta ha sido creada con el identificador {{ param }}",
+      "updated": "Una Pregunta ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una Pregunta ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Question {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la Pregunta {{ id }}?"
       },
       "detail": {
-        "title": "Question"
+        "title": "Pregunta"
       },
-      "text": "Text",
-      "sectionId": "Section Id",
-      "status": "Status",
-      "status": "Status",
-      "sectionId": "Section Id"
+      "text": "Texto",
+      "section": "Seccion",
+      "status": "Estado"
     }
   }
 }
