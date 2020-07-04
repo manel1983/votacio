@@ -27,7 +27,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   eventSubscriber?: Subscription;
   selectedSection?: number;
   selectedQuestion?: number;
-  selectedAnswer?: number;
+  selectedAnswer?: IAnswer;
   account: Account | null = null;
   vote?: IVote;
 
@@ -55,22 +55,23 @@ export class QuizComponent implements OnInit, OnDestroy {
 
   loadPage(): void {
     this.quizService.find(1).subscribe(
-        (res: HttpResponse<IQuiz>) => this.onSuccess(res.body),
-        () => this.onError()
-      );
+      (res: HttpResponse<IQuiz>) => this.onSuccess(res.body),
+      () => this.onError()
+    );
   }
 
   setSection(_index: number): void {
     this.selectedQuestion = undefined;
     this.answers = [];
     this.selectedAnswer = undefined;
-    this.selectedSection= _index;
-    if(this.quiz && this.quiz.sections) {
+    this.selectedSection = _index;
+    if (this.quiz && this.quiz.sections) {
       const sectionId = this.quiz.sections[_index].id;
       if (sectionId) {
-        this.questionService.querySection(sectionId).subscribe((res: HttpResponse<IQuestion[]>) => this.onSuccessQuestion(res.body),
-        () => this.onError()
-      );
+        this.questionService.querySection(sectionId).subscribe(
+          (res: HttpResponse<IQuestion[]>) => this.onSuccessQuestion(res.body),
+          () => this.onError()
+        );
       }
     }
   }
@@ -78,16 +79,18 @@ export class QuizComponent implements OnInit, OnDestroy {
   setQuestion(_index: number): void {
     this.selectedAnswer = undefined;
     this.selectedQuestion = _index;
-    if(this.questions) {
+    if (this.questions) {
       const questionId = this.questions[_index].id;
-      if(questionId){
+      if (questionId) {
         // Find question answers
-        this.answerService.queryQuestion(questionId).subscribe((res: HttpResponse<IAnswer[]>) => this.onSuccessAnswer(res.body),
+        this.answerService.queryQuestion(questionId).subscribe(
+          (res: HttpResponse<IAnswer[]>) => this.onSuccessAnswer(res.body),
           () => this.onError()
         );
         if (this.account) {
           // Find question vote
-          this.voteService.queryUserVote(questionId, this.account.id).subscribe((res: HttpResponse<IVote>) => this.onSuccessVote(res.body),
+          this.voteService.queryUserVote(questionId, this.account.id).subscribe(
+            (res: HttpResponse<IVote>) => this.onSuccessVote(res.body),
             () => this.onError()
           );
         }
@@ -95,17 +98,15 @@ export class QuizComponent implements OnInit, OnDestroy {
     }
   }
 
-  setAnswer(e: any) : void {
-    alert('3');
-    if (e.target.checked) {
-      this.selectedAnswer = e.target.value;
-      if (this.selectedAnswer && this.account && this.selectedQuestion) {
-        const questionId = this.questions[this.selectedQuestion].id;
-        if (questionId) {
-          this.voteService.vote(questionId, this.selectedAnswer, this.account.id).subscribe((res: HttpResponse<IVote>) => this.onSuccessVote(res.body),
-            () => this.onError()
-          );
-        }
+  setAnswer(e: any): void {
+    if (e.target.checked && this.selectedQuestion != null && this.account != null) {
+      const answerId: number = e.target.id;
+      const questionId = this.questions[this.selectedQuestion].id;
+      if (questionId) {
+        this.voteService.vote(questionId, answerId, this.account.id).subscribe(
+          (res: HttpResponse<IVote>) => this.onSuccessVote(res.body),
+          () => this.onError()
+        );
       }
     } else {
       this.selectedAnswer = undefined;
@@ -133,6 +134,9 @@ export class QuizComponent implements OnInit, OnDestroy {
   protected onSuccessVote(data: IVote | null): void {
     if (data) {
       this.vote = data;
+      if (data.answer) {
+        this.selectedAnswer = data.answer;
+      }
     }
   }
 
@@ -144,5 +148,4 @@ export class QuizComponent implements OnInit, OnDestroy {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     return item.id!;
   }
-
 }

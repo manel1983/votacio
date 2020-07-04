@@ -20,12 +20,10 @@
         </div>
         <div class="col-sm-4">
             <div *ngFor="let answer of answers; let i = index;">
-                <div class="col-sm-1">
-                    <input type="checkbox" [value]="answer.id" (change)="setAnswer($event)" />
-                </div>
-                <div class="col-sm-3">
+                <label for="answer_{{answer.id}}">
+                    <input id="{{answer.id}}" [value]="answer.id" type="radio" name="options" (change)="setAnswer($event)" checked="selectedAnswer.id == answer.id && selectedAnswer">
                     {{answer.text}}
-                </div>
+                </label>
             </div>
         </div>
     </div>

@@ -117,7 +117,7 @@ public class VoteResource {
         if (vote.isEmpty()) {
         	return ResponseEntity.ok().build();
         } else {
-        	return ResponseEntity.of(vote).ok().build();
+        	return ResponseEntity.ok().body(vote.get());
         }
     }
 
